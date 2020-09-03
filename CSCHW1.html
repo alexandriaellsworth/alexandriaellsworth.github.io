@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>alltheflowers</title>
+
+        <link rel="stylesheet" type="text/css" href="HW1.css">
+
+        
+
+        <script>
+
+            var madeList=false;
+
+            function flowerList() {
+
+            //alert("make a list!");
+
+            if (!madeList){
+
+                var myList=document.createElement("OL");
+                var myItem=document.createElement("LI");
+                var textnode=document.createTextNode("Violet");
+                myItem.appendChild(textnode);
+                myList.appendChild(myItem);
+
+                myItem=document.createElement("LI");
+                var textnode=document.createTextNode("Lily");
+                myItem.appendChild(textnode);
+                myList.appendChild(myItem);
+
+                myItem=document.createElement("LI");
+                myItem.setAttribute("id", "li3");
+                var textnode=document.createTextNode("Rose");
+                myItem.appendChild(textnode);
+                myList.appendChild(myItem);
+
+                myItem=document.createElement("LI");
+                var textnode=document.createTextNode("Marigold");
+                myItem.appendChild(textnode);
+                myList.appendChild(myItem);
+
+                document.getElementById("AFlowerList").appendChild(myList);
+
+                document.getElementById("clrselect").removeAttribute("hidden");
+                madeList=true
+
+             }
+
+            }
+
+            function colorPicked(selectObj) {
+        //alert(selectObj.value);
+        document.getElementById("li3").innerHTML = selectObj.value;
+
+            }
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <button onclick ="flowerList()">A Flower List</button>
+        <div id="AFlowerList"></div>
+
+        <div id="clrselect" hidden> 
+      <label for="colors">Choose a color:</label>
+
+      <select name="colorsofflowers" id="colorsofflowers" onchange="colorPicked(this)">
+        <option value="pink">Pink</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select> 
+    </div>
+
+    </body>
+
+
+</html>
