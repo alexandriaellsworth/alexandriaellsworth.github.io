@@ -17,7 +17,7 @@
                     myObj = JSON.parse(this.responseText);
                     txt += "<table border='1'>"
                     for (x in myObj) {
-                    txt += "<tr><td>" + myObj[x].name + "</td><td>" + myObj[x].address + "</td><td>" + myObj[x].latitude + "</td><td>" + myObj[x].longitude + </td></tr>";
+                    txt += "<tr><td>" + myObj[x].name + "</td><td>" + myObj[x].address + </td></tr>";
                 }
                 txt += "</table>" 
                 document.getElementById("mylistdiv").innerHTML = txt;
